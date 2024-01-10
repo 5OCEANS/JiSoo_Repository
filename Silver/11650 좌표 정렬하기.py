@@ -6,6 +6,5 @@ for i in range(n):
     l.append([x, y])
 
 sa = sorted(l)
-
 for i in range(n):
     print(sa[i][0], sa[i][1])
