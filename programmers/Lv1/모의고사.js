@@ -12,7 +12,7 @@ function solution(answers) {
     if (b[i % b.length] === an) c2 += 1;
     if (c[i % c.length] === an) c3 += 1;
   });
-
+  
   let ms = Math.max(c1, c2, c3);
   if (c1 === ms) {
     answer.push(1);
