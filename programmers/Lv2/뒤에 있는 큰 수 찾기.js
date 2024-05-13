@@ -1,14 +1,13 @@
 function solution(numbers) {
-  var answer = [];
+  var answer = new Array(numbers.length).fill(-1);
+  var stack = [];
   for (let i = 0; i < numbers.length; i++) {
-    var num = -1;
-    for (let j = i + 1; j < numbers.length; j++) {
-      if (numbers[i] < numbers[j]) {
-        num = numbers[j];
-        break;
-      }
+    // 스택이 비어있지 않고 스택 맨 위의 숫자가 현재 숫자보다 작을 때까지
+    while (stack && numbers[stack.at(-1)] < numbers[i]) {
+      answer[stack.pop()] = numbers[i];
     }
-    answer.push(num);
+    stack.push(i);
   }
+
   return answer;
 }
